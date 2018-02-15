@@ -16,9 +16,8 @@ ActiveRecord::Schema.define(version: 20180215095817) do
     t.integer "content_id"
     t.integer "user_id"
     t.text "text"
-    t.datetime "created_at", null: false
+    t.datetime "created_at"
     t.datetime "deleted_at"
-    t.datetime "updated_at", null: false
     t.index ["content_id"], name: "index_comments_on_content_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -27,9 +26,8 @@ ActiveRecord::Schema.define(version: 20180215095817) do
     t.integer "user_id"
     t.string "image_path"
     t.text "caption"
-    t.datetime "created_at", null: false
+    t.datetime "created_at"
     t.datetime "deleted_at"
-    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_contents_on_user_id"
   end
 
@@ -38,9 +36,9 @@ ActiveRecord::Schema.define(version: 20180215095817) do
     t.string "email"
     t.string "password"
     t.string "password_conf"
-    t.datetime "created_at", null: false
+    t.datetime "created_at"
     t.datetime "deleted_at"
-    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

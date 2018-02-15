@@ -6,8 +6,6 @@ class CreateContents < ActiveRecord::Migration[5.1]
       t.text :caption
       t.datetime :created_at
       t.datetime :deleted_at
-
-      t.timestamps
     end
     add_index :contents, :user_id
   end

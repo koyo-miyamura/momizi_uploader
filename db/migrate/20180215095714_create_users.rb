@@ -7,8 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :password_conf
       t.datetime :created_at
       t.datetime :deleted_at
-
-      t.timestamps
     end
+    add_index :users, :email, unique: true
   end
 end
