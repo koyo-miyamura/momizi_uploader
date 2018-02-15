@@ -16,13 +16,13 @@
 
 |カラム名|属性|NN|UQ|Index|
 |:--:|:--:|:--:|:--:|:--:|
-|id|int|T|T|F|
+|id|integer|T|T|F|
 |name|string|T|F|F|
 |email|string|T|T|F|
 |password|string|T|F|F|
 |password_conf|string|T|F|F|
-|created at|date time|T|F|F|
-|deleted at|date time|F|F|F|
+|created_at|datetime|T|F|F|
+|deleted_at|datetime|F|F|F|
 
 
 #### Contents
@@ -30,11 +30,11 @@
 |カラム名|属性|NN|UQ|Index|
 |:--:|:--:|:--:|:--:|:--:|
 |id|int|T|T|F|
-|user_id|int|T|F|T|
+|user_id|integer|T|F|T|
 |image_path|string|T|T|F|
-|text|string|T|F|F|
-|created at|date time|T|F|F|
-|deleted at|date time|F|F|F|
+|text|text|T|F|F|
+|created_at|datetime|T|F|F|
+|deleted_at|datetime|F|F|F|
 
 
 #### Comments
@@ -42,8 +42,8 @@
 |カラム名|属性|NN|UQ|Index|
 |:--:|:--:|:--:|:--:|:--:|
 |id|int|T|T|F|
-|content_id|int|T|F|T|
-|user_id|int|T|F|T|
-|text|string|T|F|F|
-|created at|date time|T|F|F|
-|deleted at|date time|F|F|F|
+|content_id|integer|T|F|T|
+|user_id|integer|T|F|T|
+|text|text|T|F|F|
+|created_at|datetime|T|F|F|
+|deleted_at|datetime|F|F|F|
