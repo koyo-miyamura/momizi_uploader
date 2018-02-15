@@ -29,5 +29,14 @@ RUN echo 'eval "$(rbenv init --no-rehash -)"' >> /etc/profile.d/rbenv.sh
 RUN source /etc/profile.d/rbenv.sh; rbenv install ${ruby_ver}; rbenv global ${ruby_ver}
 RUN source /etc/profile.d/rbenv.sh; gem update --system; gem install --version ${rails_ver} --no-ri --no-rdoc rails; gem install bundle
 
+# bundle installのffiエラー解消
+RUN yum -y install libffi6 libffi-devel pkg-config
+
+# vimのインストール
+RUN yum -y install vim
+
 # mysql起動の設定
 CMD ["service", "mysqld", "start"]
+
+# 3000ポートの開放(docker run -p 3000:3000 を忘れずに)
+EXPOSE  3000
