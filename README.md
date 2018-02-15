@@ -1,0 +1,49 @@
+# Koyo intern もみじあっぷろ〜だ〜
+
+## 構成
+* ログインページ(login)
+* 投稿一覧ページ(post_index)
+    * 画像と自分のコメント投稿機能
+    * 投稿一覧(最新５件のコメント)
+* 投稿詳細ページ(post_detail)
+    * 投稿に対してコメント機能
+    * すべてのコメントの表示
+
+
+## テーブル定義
+
+#### Users
+
+|カラム名|属性|NN|UQ|Index|
+|:--:|:--:|:--:|:--:|:--:|
+|id|int|T|T|F|
+|name|string|T|F|F|
+|email|string|T|T|F|
+|password|string|T|F|F|
+|password_conf|string|T|F|F|
+|created at|date time|T|F|F|
+|deleted at|date time|F|F|F|
+
+
+#### Contents
+
+|カラム名|属性|NN|UQ|Index|
+|:--:|:--:|:--:|:--:|:--:|
+|id|int|T|T|F|
+|user_id|int|T|F|T|
+|image_path|string|T|T|F|
+|text|string|T|F|F|
+|created at|date time|T|F|F|
+|deleted at|date time|F|F|F|
+
+
+#### Comments
+
+|カラム名|属性|NN|UQ|Index|
+|:--:|:--:|:--:|:--:|:--:|
+|id|int|T|T|F|
+|content_id|int|T|F|T|
+|user_id|int|T|F|T|
+|text|string|T|F|F|
+|created at|date time|T|F|F|
+|deleted at|date time|F|F|F|
