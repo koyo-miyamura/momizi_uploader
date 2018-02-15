@@ -12,13 +12,18 @@
 
 ## テーブル定義
 
+#### リレーション
+* "Users" has many "Contents"
+* "Users" has many "Comments"
+* "Contents" has many "Comments"
+
 #### Users
 
 |カラム名|属性|NN|UQ|Index|
 |:--:|:--:|:--:|:--:|:--:|
-|id|integer|T|T|F|
+|id|integer|T|T|T|
 |name|string|T|F|F|
-|email|string|T|T|F|
+|email|string|T|T|T|
 |password|string|T|F|F|
 |password_conf|string|T|F|F|
 |created_at|datetime|T|F|F|
@@ -29,10 +34,10 @@
 
 |カラム名|属性|NN|UQ|Index|
 |:--:|:--:|:--:|:--:|:--:|
-|id|int|T|T|F|
+|id|integer|T|T|T|
 |user_id|integer|T|F|T|
-|image_path|string|T|T|F|
-|text|text|T|F|F|
+|image_path|string|T|F|F|
+|caption|text|T|F|F|
 |created_at|datetime|T|F|F|
 |deleted_at|datetime|F|F|F|
 
@@ -41,7 +46,7 @@
 
 |カラム名|属性|NN|UQ|Index|
 |:--:|:--:|:--:|:--:|:--:|
-|id|int|T|T|F|
+|id|integer|T|T|T|
 |content_id|integer|T|F|T|
 |user_id|integer|T|F|T|
 |text|text|T|F|F|
