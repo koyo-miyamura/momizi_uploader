@@ -16,7 +16,19 @@
   </div>
 </div>
 
-<div id="messages" class="content row">
-  <p>hello!</p>
+<div class="content row">
+  <% @contents.each do |content| %>
+    <div class="box box-primary">
+      <div class="post">
+        <p> user_name </p>
+        <%= image_tag content.image.url %>
+        <p style = "color:red"><%= content.caption %></p>
+      </div>
+      <p><b>コメント</b></p>
+      <% 5.times do puts %>
+        <p> hello </p>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 

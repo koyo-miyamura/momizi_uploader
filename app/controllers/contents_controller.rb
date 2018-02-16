@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
   def index
-    #@contents_list = Content.find(:all)
+    @contents = Content.all
     @new_content = Content.new
   end
 
@@ -15,6 +15,7 @@ class ContentsController < ApplicationController
   end
 
   def detail
+    
   end
 
     private
