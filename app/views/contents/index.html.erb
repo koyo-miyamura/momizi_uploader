@@ -16,6 +16,22 @@
   </div>
 </div>
 
+<% if flash[:error] %>
+  <div class="content" style="border: dashed;">
+    <p>フラッシュ</p>
+    <% flash[:error].each do |message| %>
+      <li> <%= message %> </li>   
+    <% end %>
+  </div>
+<% end %>
+
+<% if flash[:success] %>
+  <div class="content" style="border: dashed;">
+    <p>フラッシュ</p>
+    <p><%= flash[:success] %></p>  
+  </div>
+<% end %>
+
 <div class="content row">
   <% @contents.each do |content| %>
     <div class="box box-primary">
