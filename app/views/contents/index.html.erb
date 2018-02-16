@@ -1,15 +1,22 @@
-
 <div class="container">
   <div class="postarea cf">
     <div class="postarea-text">
-      <textarea name="" id="content" cols="30" rows="10" placeholder="Enterで投稿"></textarea>
-      <button id="post" class="postarea-button"><i class="fa fa-hand-o-down" aria-hidden="true"></i> 投稿</buttons>
+<!--       <textarea name="" id="content" cols="30" rows="10" placeholder="Enterで投稿"></textarea>
+      <button id="post" class="postarea-button"><i class="fa fa-hand-o-down" aria-hidden="true"></i> 投稿</buttons> -->
+      <%= form_for @new_content, url: contents_new_path do |nc| %>
+        
+        <%= nc.label      :キャプション %>
+        <%= nc.text_field :caption %>
+        <%= nc.label       :画像アップロード %>
+        <%= nc.file_field  :image %>
+
+        <%= nc.submit "投稿", class: "btn btn-primary"%>
+      <% end %>
     </div>
   </div>
 </div>
 
-<!-- JavaScriptでFirebase上のデータベースから動的に取得 -->
-<div id="messages" class="content">
-  <div id="dummy"></div>
+<div id="messages" class="content row">
+  <p>hello!</p>
 </div>
 
