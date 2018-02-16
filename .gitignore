@@ -73,3 +73,7 @@ bower.json
 
 # Ignore node_modules
 node_modules/
+
+# Ignore uploaded images
+/public/uploads
+
