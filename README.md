@@ -24,8 +24,8 @@
 |id|integer|T|T|T|
 |name|string|T|F|F|
 |email|string|T|T|T|
-|password|string|T|F|F|
-|password_conf|string|T|F|F|
+|encrypted_password|string|T|F|F|
+|remember_created_at|datetime|F|F|F|
 |created_at|datetime|T|F|F|
 |deleted_at|datetime|F|F|F|
 
