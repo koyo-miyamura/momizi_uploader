@@ -17,7 +17,6 @@
 }
 .container {
     width: 100%;
-    background-color: #d84132;
 }
 .container .postarea {
     max-width: 720px;
@@ -51,12 +50,11 @@
     border-radius: 3px;
     text-align: center;
     border: 1px solid #ededed;
-    float: right;
     width: 15%;
 }
 .content {
     max-width: 760px;
-    margin: 3em auto;
+    margin: auto;
 }
 .content .post {
     margin-top: 2em;
@@ -97,18 +95,6 @@
 }
 
 /* Koyo 追加部分 */
-.remove-text{
-    font-size: 0.7em;
-    color: #848484;
-    text-align: right;
-    border: 0;
-    margin: 0;
-}
-.remove-text:hover{
-    font-weight: bold;
-    color: #c0392b;
-    cursor: pointer;
-}
 .login-logo{
     text-align: center;
 }
@@ -129,14 +115,22 @@
     cursor: pointer;
     opacity:0.6;
 }
-.my-post-name{
-    font-size: 0.7em;
-    color: #2980b9;
-    font-weight: bold;
-    margin-right: 10px;
+.postarea-text{
+    color: #fff;
 }
-.other-post-name{
-    font-size: 0.7em;
-    font-weight: bold;
-    margin-left: 10px;
+.gray-content{
+    background-color: #ecf0f5;
+}
+/*bootstrapのスタイル書き換え*/
+.alert{
+    margin: 0;
+}
+.alert-error, .alert-danger{
+    margin-top: 5px;
+}
+.post-container{
+    background-color: #d84132e8;
+}
+.comment{
+    border-top: 1px dotted;
 }
