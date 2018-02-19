@@ -4,7 +4,7 @@ class ContentsController < ApplicationController
     @new_content = Content.new
   end
 
-  def new
+  def create
     @content = Content.new(content_params)
     @content.user_id = 1
     if @content.save
@@ -25,7 +25,7 @@ class ContentsController < ApplicationController
     @new_comment = Comment.new
   end
 
-  def new_comment
+  def create_comment
     @comment = Comment.new(comment_params)
     @comment[:user_id] = 1
     if @comment.save

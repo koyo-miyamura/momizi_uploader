@@ -24,7 +24,7 @@
                 </div>
               <% end %>
               <!-- コメント追加フォーム -->
-              <%= form_for @new_comment, url: :new_comment do |nc| %>
+              <%= form_for @new_comment, url: :create_comment do |nc| %>
                 <div class="form-group">
                   <div class="input text">
                     <i class="fa fa-pencil-comment"></i> <%= nc.label :新規コメント %>

@@ -1,7 +1,7 @@
 <div class="container post-container">
   <div class="postarea cf">
     <div class="postarea-text">
-      <%= form_for @new_content, url: contents_new_path do |nc| %>
+      <%= form_for @new_content, url: contents_create_path do |nc| %>
         <div class="form-group">
           <div class="input text">
             <i class="fa fa-pencil-square-o"></i> <%= nc.label :キャプション %>

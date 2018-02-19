@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get 'users/signup'
 
   get  'contents/index'
-  post 'contents/new', to: 'contents#new', as: :contents_new
+  post 'contents/create', to: 'contents#create', as: :contents_create
 
   get 'contents/detail'
-  post 'contents/new_comment', to: 'contents#new_comment', as: :new_comment
+  post 'contents/create_comment', to: 'contents#create_comment', as: :create_comment
 
   root 'contents#index'
 end
