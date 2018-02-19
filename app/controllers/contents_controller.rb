@@ -7,8 +7,7 @@ class ContentsController < ApplicationController
   def new
     @content = Content.new(content_params)
     @content.user_id = 1
-    if @content.valid?
-      @content.save
+    if @content.save
       flash[:success] = ["投稿できました"]
       redirect_to action: :index
     else
@@ -18,15 +17,18 @@ class ContentsController < ApplicationController
   end
 
   def detail
-    @content = Content.find(params[:id])
+    @content = Content.find_by(id: params[:id])
+    if @content.nil?
+      head 404
+    end
+
     @new_comment = Comment.new
   end
 
   def new_comment
     @comment = Comment.new(comment_params)
     @comment[:user_id] = 1
-    if @comment.valid?
-      @comment.save
+    if @comment.save
       flash[:success] = ["投稿しました"]
       redirect_to action: :detail, id: @comment[:content_id]
     else

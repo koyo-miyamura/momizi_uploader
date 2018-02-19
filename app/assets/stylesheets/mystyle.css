@@ -134,3 +134,6 @@
 .comment{
     border-top: 1px dotted;
 }
+.post-container{
+    max-width: 100%;
+}
