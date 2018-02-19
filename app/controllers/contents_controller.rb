@@ -19,6 +19,7 @@ class ContentsController < ApplicationController
 
   def detail
     @content = Content.includes(comments: :user).find_by(id: params[:id])
+    #@content = Content.includes(comments_limit: :user).find_by(id: params[:id])
     if @content.nil?
       head 404
     end
