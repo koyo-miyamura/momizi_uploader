@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20180215095817) do
 
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
-    t.string "image_path"
+    t.string "image"
     t.text "caption"
     t.datetime "created_at"
     t.datetime "deleted_at"

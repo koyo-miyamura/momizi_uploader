@@ -36,7 +36,7 @@
 |:--:|:--:|:--:|:--:|:--:|
 |id|integer|T|T|T|
 |user_id|integer|T|F|T|
-|image_path|string|T|F|F|
+|image|string|T|F|F|
 |caption|text|T|F|F|
 |created_at|datetime|T|F|F|
 |deleted_at|datetime|F|F|F|

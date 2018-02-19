@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   get 'users/signup'
 
-  get 'contents/index'
+  get  'contents/index'
+  post 'contents/create', to: 'contents#create', as: :contents_create
 
   get 'contents/detail'
+  post 'contents/create_comment', to: 'contents#create_comment', as: :create_comment
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'contents#index'
 end
