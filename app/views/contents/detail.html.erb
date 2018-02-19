@@ -14,20 +14,20 @@
           <div class="card box-shadow">
             <%= image_tag @content.image.url, class: "card-img-top" %>
             <div class="card-body">
-              <h5 class="card-title">@user_name</h5>
+              <h5 class="card-title"><%= @content.user.name %></h5>
               <p class="card-text"><%= @content.caption %></p>
               <h6 class="mt-5"><b><i class="fa fa-comment"></i> コメント</b></h6>
-              <% 3.times do%>
+              <% @content.comments.each do |cm| %>
                 <div class="mb-3 comment">
-                  <h6 class="card-title">username</h6>
-                  <p class="card-text">hello-worldshello-worldshello-worldshello-worldshello-worldshello-worldshello-worldshello-worlds-worldshello-worldshello-worldshello-worldshello-worldshello-worldshello-worldshello-worldshello-worlds</p>
+                  <h6 class="card-title"><%= cm.user.name %></h6>
+                  <p class="card-text"><%= cm.text %></p>
                 </div>
               <% end %>
               <!-- コメント追加フォーム -->
               <%= form_for @new_comment, url: :create_comment do |nc| %>
                 <div class="form-group">
                   <div class="input text">
-                    <i class="fa fa-pencil-comment"></i> <%= nc.label :新規コメント %>
+                    <i class="fa fa-pencil"></i> <%= nc.label :新規コメント %>
                     <%= nc.text_field  :text, class: "form-control" %>
                     <%= nc.hidden_field :content_id, value: @content.id %>
                   </div>
