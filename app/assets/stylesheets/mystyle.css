@@ -137,3 +137,6 @@
 .post-container{
     max-width: 100%;
 }
+.flash-message{
+    text-align: center;
+}

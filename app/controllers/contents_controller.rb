@@ -1,4 +1,5 @@
 class ContentsController < ApplicationController
+  before_action :sign_in_required
   def index
     @contents = Content.all
     @new_content = Content.new
