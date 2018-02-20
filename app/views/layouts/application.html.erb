@@ -9,18 +9,23 @@
 
   </head>
 
-  <body>
-    <div class="header">
-      <h1 class="logo">
-        もみじあっぷろ〜だ〜
-        <% if user_signed_in? %>
+  <% if user_signed_in? %>
+    <body>
+      <div class="header">
+        <h1 class="logo">
+          もみじあっぷろ〜だ〜
           <span class="username-header"> <i class="fa fa-user"></i> <%= current_user.name %> </span>
-        <% end %>
-        <%= link_to destroy_user_session_path, :method => :delete do %>
-          <i class="fa fa-sign-out logout"></i> 
-        <% end %>
-      </h1>
-    </div>
-    <%= yield %>
-  </body>
+          <%= link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
+            <i class="fa fa-sign-out logout"></i> 
+          <% end %>
+        </h1>
+      </div>
+  <% elsif %>
+    <body class="hold-transition login-page">
+      <div class="header">
+        <h1 class="login-logo logo">もみじあっぷろ〜だ〜</h1>
+      </div>
+  <% end %>
+      <%= yield %>
+    </body>
 </html>
