@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'contents/detail'
   post 'contents/create_comment', to: 'contents#create_comment', as: :create_comment
+  delete 'contents/delete'
 
   root 'contents#index'
 end

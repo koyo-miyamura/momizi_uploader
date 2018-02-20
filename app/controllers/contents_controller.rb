@@ -18,6 +18,16 @@ class ContentsController < ApplicationController
     end
   end
 
+  def delete
+    @content = Content.find_by(params.permit(:id))
+    if @content.destroy
+      flash[:success] = "正しく削除されました"
+      redirect_to action: :index
+    else
+      flash[:error] = "削除されませんでした"
+    end
+  end
+
   def detail
     @content = Content.includes(comments: :user).find_by(id: params[:id])
     #@content = Content.includes(comments_limit: :user).find_by(id: params[:id])

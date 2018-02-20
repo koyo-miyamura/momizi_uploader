@@ -47,7 +47,7 @@
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">
                     <%= link_to :View, controler: :contents, action: :detail, id: content.id %></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to :Delete, {controler: :contents, action: :delete, id: content.id}, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %></button>
                 </div>
               </div>
               <h6 class="mt-5"><b><i class="fa fa-comment"></i> コメント</b></h6>
