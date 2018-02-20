@@ -1,7 +1,7 @@
 class ContentsController < ApplicationController
   def index
     # N+1問題対策
-    @contents = Content.all.includes(comments: :user)
+    @contents = Content.includes(comments: :user)
     @new_content = Content.new
   end
 
