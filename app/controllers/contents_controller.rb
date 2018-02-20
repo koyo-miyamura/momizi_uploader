@@ -1,6 +1,7 @@
 class ContentsController < ApplicationController
   def index
-    @contents = Content.all
+    # N+1問題対策
+    @contents = Content.includes(comments: :user)
     @new_content = Content.new
   end
 
@@ -17,7 +18,8 @@ class ContentsController < ApplicationController
   end
 
   def detail
-    @content = Content.find_by(id: params[:id])
+    @content = Content.includes(comments: :user).find_by(id: params[:id])
+    #@content = Content.includes(comments_limit: :user).find_by(id: params[:id])
     if @content.nil?
       head 404
     end

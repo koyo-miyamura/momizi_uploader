@@ -47,10 +47,10 @@
                 </div>
               </div>
               <h6 class="mt-5"><b><i class="fa fa-comment"></i> コメント</b></h6>
-              <% 3.times do%>
+              <% content.comments.first(5).each do |cm| %>
                 <div class="mb-3 comment">
-                  <h6 class="card-title">username</h6>
-                  <p class="card-text">hello-worldshello-worldshello-worldshello-worldshello-worldshello-worldshello-worldshello-worlds-worldshello-worldshello-worldshello-worldshello-worldshello-worldshello-worldshello-worldshello-worlds</p>
+                  <h6 class="card-title"><%= cm.user.name %></h6>
+                  <p class="card-text"><%= cm.text %></p>
                 </div>
               <% end %>
             </div>
