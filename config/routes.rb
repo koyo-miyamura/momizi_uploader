@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'users/login'
+  # get 'users/login'
 
-  get 'users/signup'
+  # get 'users/signup'
 
   get  'contents/index'
   post 'contents/create', to: 'contents#create', as: :contents_create

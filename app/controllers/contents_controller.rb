@@ -8,7 +8,7 @@ class ContentsController < ApplicationController
 
   def create
     @content = Content.new(content_params)
-    @content.user_id = 1
+    @content[:user_id] = current_user.id
     if @content.save
       flash[:success] = ["投稿できました"]
       redirect_to action: :index
@@ -30,7 +30,7 @@ class ContentsController < ApplicationController
 
   def create_comment
     @comment = Comment.new(comment_params)
-    @comment[:user_id] = 1
+    @comment[:user_id] = current_user.id
     if @comment.save
       flash[:success] = ["投稿しました"]
       redirect_to action: :detail, id: @comment[:content_id]

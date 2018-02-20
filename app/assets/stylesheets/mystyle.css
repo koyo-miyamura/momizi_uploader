@@ -140,3 +140,18 @@
 .flash-message{
     text-align: center;
 }
+/*deviseのフラッシュがalart-noticeなので対策*/
+.alert-notice{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.username-header{
+    font-family: Arial Black;
+    font-size: 16px;
+    font-weight: lighter;
+    color: #fff;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 0.7em;
+}

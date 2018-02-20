@@ -12,7 +12,13 @@
   <body>
     <div class="header">
       <h1 class="logo">
-        もみじあっぷろ〜だ〜<i id="logout" class="fa fa-sign-out logout"></i>
+        もみじあっぷろ〜だ〜
+        <% if user_signed_in? %>
+          <span class="username-header"> <i class="fa fa-user"></i> <%= current_user.name %> </span>
+        <% end %>
+        <%= link_to destroy_user_session_path, :method => :delete do %>
+          <i class="fa fa-sign-out logout"></i> 
+        <% end %>
       </h1>
     </div>
     <%= yield %>
