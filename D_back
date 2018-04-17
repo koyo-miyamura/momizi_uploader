@@ -36,16 +36,22 @@ RUN yum -y install libffi6 libffi-devel pkg-config
 RUN yum -y install vim
 
 ADD . /app
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
+
+# gem
+RUN yum -y install rubygems
+RUN gem install bundler
 
 # bundle
-RUN bundle
+RUN bundle install
 
 # mysql起動の設定
 RUN service mysqld start
 
 # db
-RUN rails db:create
-RUN rails db:migrate
+RUN bundle exec rails db:create
+RUN bundle exec rails db:migrate
 
 # 起動
 CMD ["rails", "s"]

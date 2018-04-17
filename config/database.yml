@@ -14,8 +14,10 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: 
+ # host: 127.0.0.1
   host: localhost
+  port: 3306
 
 development:
   <<: *default
@@ -50,5 +52,5 @@ test:
 production:
   <<: *default
   database: momizi_uploader_production
-  username: momizi_uploader
+  username: root
   password: <%= ENV['MOMIZI_UPLOADER_DATABASE_PASSWORD'] %>
