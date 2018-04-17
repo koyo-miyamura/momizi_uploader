@@ -61,3 +61,4 @@ gem "jquery-rails"
 gem "font-awesome-rails"
 gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
+gem 'rails_12factor', group: :production
