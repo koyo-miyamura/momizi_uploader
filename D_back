@@ -1,3 +1,4 @@
+# centosで動かすversion
 FROM centos:6
 
 # rubyとrailsのバージョンを指定
