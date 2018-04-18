@@ -1,5 +1,9 @@
 # Koyo intern もみじあっぷろ〜だ〜
 
+## Quick Start
+`docker build -t momizi .`
+`docker run -it -p 3000:3000 momizi`
+
 ## 構成
 * ログインページ(login)
 * 投稿一覧ページ(post_index)
